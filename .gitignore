@@ -1,0 +1,11 @@
+# Ignore all class files
+*.class
+
+# Ignore the VSCode directory
+.vscode/
+
+# Ignore node_modules directory
+node_modules/
+
+# Ignore log files
+*.log
