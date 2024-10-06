@@ -99,7 +99,8 @@ class SinglyLinkedList{
             prev = current;
             current = current.next;
         }
-        prev.next = current.next;
+        if(current == null) {System.out.println("Key not found"); return;}
+        if(prev!=null) prev.next = current.next;
     }
     public void display(){
         Node current = head;

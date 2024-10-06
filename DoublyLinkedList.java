@@ -93,6 +93,7 @@ public class DoublyLinkedList {
         dummy.prev = null;
         tail.next = null;
         }
+        length--;
     }
     
     public void del_at_begin() {
@@ -108,6 +109,27 @@ public class DoublyLinkedList {
         head.prev = null;
         dummy.next = null;
         }
+        length--;
+    }
+
+    public void del_at_pos(int pos) {
+        if(pos == 1 ){
+            del_at_begin();
+        }
+        else{
+        Node prev = head;   
+        int count = 1;
+        while(count<pos-1) {
+            prev = prev.next;
+            count++;
+        }
+        Node current = prev.next;
+        prev.next = current.next;
+        current.next.prev = prev;
+        current.prev = null;
+        current.next = null;
+    }
+    length--;
     }
     public static void main(String[] args) {
         DoublyLinkedList list1 = new DoublyLinkedList();
@@ -116,10 +138,6 @@ public class DoublyLinkedList {
         list1.add_at_end(3);
         list1.add_at_begin(0);
         list1.add_at_pos(25,3);
-
-        list1.display();
-        list1.del_at_end();
-        System.out.println();
         list1.display();
     }
 }
