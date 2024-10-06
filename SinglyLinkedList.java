@@ -221,7 +221,7 @@ class SinglyLinkedList{
             slow = slow.next;
             fast = fast.next.next;
         }
-        prev.next = null; // seperate the list by making it prev.next = null
+        if(prev!=null) prev.next = null; // seperate the list by making it prev.next = null
         Node list1 = mergeSort(head); // head till prev is one list 
         Node list2 = mergeSort(slow);
         Node merged = merge_sorted_lists(list1, list2);
