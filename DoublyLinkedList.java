@@ -9,6 +9,7 @@ class Node{
     }
 }
 public class DoublyLinkedList {
+
     Node head;
     Node tail;
     private int length;
@@ -79,6 +80,35 @@ public class DoublyLinkedList {
         length++;
     }
 
+    public void del_at_end(){
+        if(tail == null) {
+            System.out.println("No Elements in the list");
+        }
+        if(head == tail) {
+            head = tail = null;
+        }
+        else {
+        Node dummy = tail;
+        tail = tail.prev;
+        dummy.prev = null;
+        tail.next = null;
+        }
+    }
+    
+    public void del_at_begin() {
+        if(head == null) {
+            System.out.println("No Elements in the list");
+        }
+        if(head == tail) {
+            head = tail = null;
+        }
+        else {
+        Node dummy = head;
+        head = head.next;
+        head.prev = null;
+        dummy.next = null;
+        }
+    }
     public static void main(String[] args) {
         DoublyLinkedList list1 = new DoublyLinkedList();
         list1.add_at_end(1);
@@ -86,6 +116,10 @@ public class DoublyLinkedList {
         list1.add_at_end(3);
         list1.add_at_begin(0);
         list1.add_at_pos(25,3);
+
+        list1.display();
+        list1.del_at_end();
+        System.out.println();
         list1.display();
     }
 }
