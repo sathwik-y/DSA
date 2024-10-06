@@ -1,4 +1,3 @@
-
 class Node {
     int data;
     Node next;
@@ -92,6 +91,15 @@ class SinglyLinkedList{
                 break;
             }
         }
+    }
+    public  void delkey(int key) {
+        Node current = head;
+        Node prev = null;
+        while(current!=null && current.data!=key) {
+            prev = current;
+            current = current.next;
+        }
+        prev.next = current.next;
     }
     public void display(){
         Node current = head;
