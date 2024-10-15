@@ -160,7 +160,7 @@ class SinglyLinkedList{
              */
         System.out.println("The " + n + " node from the end is : " + mainPtr.data);
         /*
-         Alternate Solution (own) :
+         Alternate Solution:
         int length = 0;
         Node current = head;
         while(current!=null){
@@ -210,8 +210,7 @@ class SinglyLinkedList{
         newnode.next = current;
         temp.next = newnode;
         }
-}
-    
+}    
     public static Node mergeSort(Node head) {
         if(head == null || head.next == null) return head;
         Node slow = head;
@@ -228,7 +227,6 @@ class SinglyLinkedList{
         Node merged = merge_sorted_lists(list1, list2);
         return merged;
     }
-
     public static Node merge_sorted_lists(Node a , Node b) {
     Node dummy = new Node(0);
     Node tail = dummy;
